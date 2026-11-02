@@ -1,0 +1,51 @@
+title: LSASS Opened With Memory-Read Rights By Unusual Process
+id: 894632b5-ef3f-4569-a9ec-b964d58ed75d
+status: experimental
+description: |
+    A process outside the usual system and security-product locations opens lsass.exe
+    with rights that allow reading its memory. Covers what credential dumpers actually
+    request rather than one "full access" value:
+      0x1010  PROCESS_QUERY_LIMITED_INFORMATION | PROCESS_VM_READ   (Mimikatz sekurlsa, Vista+)
+      0x1410  as above plus PROCESS_QUERY_INFORMATION
+      0x1438 / 0x143a / 0x1418  combinations listed in MITRE CAR-2019-04-004
+      0x1FFFFF  PROCESS_ALL_ACCESS on Vista and later
+      0x1F0FFF  PROCESS_ALL_ACCESS before Vista (still requested by old tooling)
+    Sysmon Event ID 10. Expect to tune the path filter for your EDR/AV.
+references:
+    - https://github.com/gentilkiwi/mimikatz/blob/master/mimikatz/modules/sekurlsa/kuhl_m_sekurlsa.c
+    - https://learn.microsoft.com/en-us/windows/win32/procthread/process-security-and-access-rights
+    - https://car.mitre.org/analytics/CAR-2019-04-004/
+    - https://attack.mitre.org/techniques/T1003/001/
+author: Gursimran Singh
+date: 2026-11-02
+tags:
+    - attack.credential-access
+    - attack.t1003.001
+    - attack.g0096
+logsource:
+    category: process_access
+    product: windows
+detection:
+    selection_target:
+        TargetImage|endswith: '\lsass.exe'
+    selection_rights:
+        GrantedAccess:
+            - '0x1010'
+            - '0x1410'
+            - '0x1418'
+            - '0x1438'
+            - '0x143a'
+            - '0x1fffff'
+            - '0x1f0fff'
+    filter_system_paths:
+        SourceImage|startswith:
+            - 'C:\Windows\System32\'
+            - 'C:\Windows\SysWOW64\'
+            - 'C:\Program Files\'
+            - 'C:\Program Files (x86)\'
+            - 'C:\ProgramData\Microsoft\Windows Defender\'
+    condition: selection_target and selection_rights and not filter_system_paths
+falsepositives:
+    - Security and backup agents installed outside Program Files
+    - Admin tools such as Process Explorer run from a user folder
+level: high

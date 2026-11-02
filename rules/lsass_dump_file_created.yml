@@ -1,0 +1,27 @@
+title: LSASS Memory Dump File Written
+id: e719a0e6-ef96-4aee-98a8-578432230ae9
+status: experimental
+description: |
+    A .dmp file whose name contains "lsass" is created. Catches the
+    dump-then-copy-off-box pattern regardless of which tool produced the dump.
+references:
+    - https://attack.mitre.org/techniques/T1003/001/
+author: Gursimran Singh
+date: 2026-11-02
+tags:
+    - attack.credential-access
+    - attack.t1003.001
+logsource:
+    category: file_event
+    product: windows
+detection:
+    selection:
+        TargetFilename|contains: 'lsass'
+        TargetFilename|endswith: '.dmp'
+    filter_wer:
+        Image|endswith: '\WerFault.exe'
+        TargetFilename|startswith: 'C:\ProgramData\Microsoft\Windows\WER\'
+    condition: selection and not filter_wer
+falsepositives:
+    - Crash dumps collected by support tooling outside the WER folder
+level: high

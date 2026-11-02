@@ -1,0 +1,34 @@
+title: LSASS Dump Via comsvcs.dll MiniDump
+id: 2c397990-3676-45c6-9835-d349c0b5befb
+status: experimental
+description: |
+    rundll32 calling the MiniDump export of comsvcs.dll (by name or ordinal #24).
+    A built-in Windows DLL, so no tool has to be dropped on disk.
+references:
+    - https://attack.mitre.org/techniques/T1003/001/
+author: Gursimran Singh
+date: 2026-11-02
+tags:
+    - attack.credential-access
+    - attack.t1003.001
+    - attack.stealth
+    - attack.t1218.011
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection_rundll:
+        - Image|endswith: '\rundll32.exe'
+        - OriginalFileName: 'RUNDLL32.EXE'
+    selection_dll:
+        CommandLine|contains: 'comsvcs'
+    selection_export:
+        CommandLine|contains:
+            - 'MiniDump'
+            - '#24'
+            - '#+24'
+            - '#-4294967272'
+    condition: all of selection_*
+falsepositives:
+    - None expected
+level: high

@@ -1,0 +1,29 @@
+title: ProcDump Full Memory Dump Of LSASS
+id: 4ca64388-f3e0-463a-bf28-83b3dbdfe564
+status: experimental
+description: |
+    Sysinternals ProcDump writing a full dump (-ma) of lsass. Matches on the command
+    line as well as the image name, because the binary is often renamed.
+references:
+    - https://learn.microsoft.com/en-us/sysinternals/downloads/procdump
+    - https://attack.mitre.org/techniques/T1003/001/
+author: Gursimran Singh
+date: 2026-11-02
+tags:
+    - attack.credential-access
+    - attack.t1003.001
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection_flag:
+        CommandLine|contains:
+            - ' -ma '
+            - ' /ma '
+            - ' -mp '
+    selection_target:
+        CommandLine|contains: 'lsass'
+    condition: all of selection_*
+falsepositives:
+    - Administrators collecting LSASS dumps for Microsoft support cases
+level: high
