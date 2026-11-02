@@ -1,0 +1,519 @@
+{
+  "name": "APT41 (G0096) - SigmaHQ rule count",
+  "versions": {
+    "attack": "20",
+    "navigator": "5.1.0",
+    "layer": "4.5"
+  },
+  "domain": "enterprise-attack",
+  "description": "Score = SigmaHQ rules tagged with the technique (including sub-techniques). 0 = no SigmaHQ rule tagged with this ID.",
+  "techniques": [
+    {
+      "techniqueID": "T1003.001",
+      "score": 79,
+      "comment": "79 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1003.002",
+      "score": 28,
+      "comment": "28 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1003.003",
+      "score": 24,
+      "comment": "24 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1005",
+      "score": 14,
+      "comment": "14 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1008",
+      "score": 4,
+      "comment": "4 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1012",
+      "score": 13,
+      "comment": "13 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1014",
+      "score": 1,
+      "comment": "1 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1016",
+      "score": 11,
+      "comment": "11 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1018",
+      "score": 17,
+      "comment": "17 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1021.001",
+      "score": 16,
+      "comment": "16 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1021.002",
+      "score": 38,
+      "comment": "38 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1027",
+      "score": 128,
+      "comment": "128 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1027.002",
+      "score": 1,
+      "comment": "1 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1030",
+      "score": 2,
+      "comment": "2 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1033",
+      "score": 30,
+      "comment": "30 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1036.004",
+      "score": 3,
+      "comment": "3 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1036.005",
+      "score": 24,
+      "comment": "24 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1037",
+      "score": 4,
+      "comment": "4 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1046",
+      "score": 20,
+      "comment": "20 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1047",
+      "score": 52,
+      "comment": "52 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1049",
+      "score": 9,
+      "comment": "9 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1053.005",
+      "score": 52,
+      "comment": "52 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1055",
+      "score": 55,
+      "comment": "55 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1056.001",
+      "score": 3,
+      "comment": "3 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1059.001",
+      "score": 222,
+      "comment": "222 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1059.003",
+      "score": 46,
+      "comment": "46 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1059.004",
+      "score": 19,
+      "comment": "19 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1069",
+      "score": 35,
+      "comment": "35 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1070.003",
+      "score": 9,
+      "comment": "9 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1070.004",
+      "score": 15,
+      "comment": "15 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1071.001",
+      "score": 42,
+      "comment": "42 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1071.002",
+      "score": 0,
+      "comment": "0 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1071.004",
+      "score": 18,
+      "comment": "18 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1078",
+      "score": 102,
+      "comment": "102 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1082",
+      "score": 33,
+      "comment": "33 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1083",
+      "score": 24,
+      "comment": "24 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1087.001",
+      "score": 13,
+      "comment": "13 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1087.002",
+      "score": 21,
+      "comment": "21 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1090",
+      "score": 34,
+      "comment": "34 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1098.007",
+      "score": 0,
+      "comment": "0 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1102.001",
+      "score": 4,
+      "comment": "4 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1104",
+      "score": 0,
+      "comment": "0 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1105",
+      "score": 87,
+      "comment": "87 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1110",
+      "score": 29,
+      "comment": "29 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1112",
+      "score": 97,
+      "comment": "97 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1133",
+      "score": 20,
+      "comment": "20 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1135",
+      "score": 7,
+      "comment": "7 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1136.001",
+      "score": 18,
+      "comment": "18 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1190",
+      "score": 149,
+      "comment": "149 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1195.002",
+      "score": 17,
+      "comment": "17 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1197",
+      "score": 16,
+      "comment": "16 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1203",
+      "score": 35,
+      "comment": "35 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1213.003",
+      "score": 5,
+      "comment": "5 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1218.001",
+      "score": 6,
+      "comment": "6 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1218.011",
+      "score": 43,
+      "comment": "43 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1480.001",
+      "score": 0,
+      "comment": "0 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1484.001",
+      "score": 6,
+      "comment": "6 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1486",
+      "score": 17,
+      "comment": "17 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1496.001",
+      "score": 0,
+      "comment": "0 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1542.003",
+      "score": 1,
+      "comment": "1 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1543.003",
+      "score": 47,
+      "comment": "47 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1546.008",
+      "score": 6,
+      "comment": "6 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1547.001",
+      "score": 39,
+      "comment": "39 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1550.002",
+      "score": 5,
+      "comment": "5 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1553.002",
+      "score": 1,
+      "comment": "1 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1555",
+      "score": 22,
+      "comment": "22 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1555.003",
+      "score": 8,
+      "comment": "8 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1560.001",
+      "score": 17,
+      "comment": "17 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1566.001",
+      "score": 24,
+      "comment": "24 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1568.002",
+      "score": 2,
+      "comment": "2 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1569.002",
+      "score": 43,
+      "comment": "43 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1570",
+      "score": 6,
+      "comment": "6 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1574.001",
+      "score": 93,
+      "comment": "93 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1574.006",
+      "score": 2,
+      "comment": "2 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1588.002",
+      "score": 9,
+      "comment": "9 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1595.002",
+      "score": 1,
+      "comment": "1 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1595.003",
+      "score": 0,
+      "comment": "0 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1596.005",
+      "score": 0,
+      "comment": "0 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1599",
+      "score": 1,
+      "comment": "1 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1684.001",
+      "score": 0,
+      "comment": "0 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1685",
+      "score": 212,
+      "comment": "212 SigmaHQ rule(s)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1685.005",
+      "score": 8,
+      "comment": "8 SigmaHQ rule(s)",
+      "enabled": true
+    }
+  ],
+  "gradient": {
+    "colors": [
+      "#ff6666",
+      "#ffe766",
+      "#8ec843"
+    ],
+    "minValue": 0,
+    "maxValue": 20
+  },
+  "legendItems": [
+    {
+      "label": "No SigmaHQ rule tagged with this ID",
+      "color": "#ff6666"
+    }
+  ]
+}
