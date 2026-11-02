@@ -1,0 +1,148 @@
+[
+  {
+    "id": "mimikatz-sekurlsa",
+    "malicious": true,
+    "category": "process_access",
+    "note": "Mimikatz sekurlsa::logonpasswords on Vista+: OpenProcess(PROCESS_VM_READ | PROCESS_QUERY_LIMITED_INFORMATION) per kuhl_m_sekurlsa.c",
+    "event": {
+      "SourceImage": "C:\\Users\\alice\\Downloads\\m64.exe",
+      "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+      "GrantedAccess": "0x1010"
+    }
+  },
+  {
+    "id": "full-access-dumper-modern-sdk",
+    "malicious": true,
+    "category": "process_access",
+    "note": "Any dumper requesting PROCESS_ALL_ACCESS, built against a Vista+ SDK",
+    "event": {
+      "SourceImage": "C:\\ProgramData\\svc\\dumper.exe",
+      "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+      "GrantedAccess": "0x1FFFFF"
+    }
+  },
+  {
+    "id": "query-plus-read",
+    "malicious": true,
+    "category": "process_access",
+    "note": "PROCESS_QUERY_INFORMATION | PROCESS_QUERY_LIMITED_INFORMATION | PROCESS_VM_READ, as seen from several dumpers (CAR-2019-04-004)",
+    "event": {
+      "SourceImage": "C:\\Users\\Public\\x.exe",
+      "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+      "GrantedAccess": "0x1410"
+    }
+  },
+  {
+    "id": "comsvcs-minidump",
+    "malicious": true,
+    "category": "process_creation",
+    "note": "Built-in DLL used to dump LSASS",
+    "event": {
+      "Image": "C:\\Windows\\System32\\rundll32.exe",
+      "OriginalFileName": "RUNDLL32.EXE",
+      "CommandLine": "rundll32.exe C:\\Windows\\System32\\comsvcs.dll, MiniDump 712 C:\\Temp\\out.dmp full"
+    }
+  },
+  {
+    "id": "comsvcs-ordinal",
+    "malicious": true,
+    "category": "process_creation",
+    "note": "Same, calling the export by ordinal to dodge 'MiniDump' string matches",
+    "event": {
+      "Image": "C:\\Windows\\System32\\rundll32.exe",
+      "OriginalFileName": "RUNDLL32.EXE",
+      "CommandLine": "rundll32 comsvcs.dll #24 712 C:\\Temp\\o.bin full"
+    }
+  },
+  {
+    "id": "procdump-renamed",
+    "malicious": true,
+    "category": "process_creation",
+    "note": "ProcDump renamed to look harmless",
+    "event": {
+      "Image": "C:\\Temp\\update.exe",
+      "OriginalFileName": "procdump",
+      "CommandLine": "update.exe -accepteula -ma lsass.exe C:\\Temp\\l.dmp"
+    }
+  },
+  {
+    "id": "dump-file",
+    "malicious": true,
+    "category": "file_event",
+    "note": "The dump landing on disk",
+    "event": {
+      "Image": "C:\\Temp\\update.exe",
+      "TargetFilename": "C:\\Temp\\lsass_0211.dmp"
+    }
+  },
+  {
+    "id": "old-tool-xp-all-access",
+    "malicious": true,
+    "category": "process_access",
+    "note": "Tooling that still requests the pre-Vista PROCESS_ALL_ACCESS value",
+    "event": {
+      "SourceImage": "C:\\Temp\\legacy_tool.exe",
+      "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+      "GrantedAccess": "0x1F0FFF"
+    }
+  },
+  {
+    "id": "defender-scan",
+    "malicious": false,
+    "category": "process_access",
+    "event": {
+      "SourceImage": "C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.25090.3-0\\MsMpEng.exe",
+      "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+      "GrantedAccess": "0x1418"
+    }
+  },
+  {
+    "id": "svchost-query",
+    "malicious": false,
+    "category": "process_access",
+    "event": {
+      "SourceImage": "C:\\Windows\\System32\\svchost.exe",
+      "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+      "GrantedAccess": "0x1000"
+    }
+  },
+  {
+    "id": "user-tool-sync-only",
+    "malicious": false,
+    "category": "process_access",
+    "event": {
+      "SourceImage": "C:\\Users\\alice\\AppData\\Local\\app\\app.exe",
+      "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+      "GrantedAccess": "0x100000"
+    }
+  },
+  {
+    "id": "normal-rundll32",
+    "malicious": false,
+    "category": "process_creation",
+    "event": {
+      "Image": "C:\\Windows\\System32\\rundll32.exe",
+      "OriginalFileName": "RUNDLL32.EXE",
+      "CommandLine": "rundll32.exe shell32.dll,Control_RunDLL desk.cpl"
+    }
+  },
+  {
+    "id": "procdump-other-process",
+    "malicious": false,
+    "category": "process_creation",
+    "event": {
+      "Image": "C:\\Tools\\procdump64.exe",
+      "OriginalFileName": "procdump",
+      "CommandLine": "procdump64.exe -ma w3wp.exe C:\\dumps\\w3wp.dmp"
+    }
+  },
+  {
+    "id": "wer-crash-dump",
+    "malicious": false,
+    "category": "file_event",
+    "event": {
+      "Image": "C:\\Windows\\System32\\WerFault.exe",
+      "TargetFilename": "C:\\ProgramData\\Microsoft\\Windows\\WER\\ReportQueue\\AppCrash_lsass.exe_1\\memory.dmp"
+    }
+  }
+]
