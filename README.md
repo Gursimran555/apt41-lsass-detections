@@ -55,7 +55,7 @@ SigmaHQ already has 79 rules tagged T1003.001, some broader than these. These fo
 `tools/apt41_coverage.py` reads the ATT&CK Enterprise STIX bundle and a SigmaHQ checkout and writes `reports/apt41-coverage.md`, plus a Navigator layer (`layers/apt41-sigma-coverage.json`) scored by SigmaHQ rule count.
 
 - **82** techniques and sub-techniques are mapped directly to APT41 (G0096) in ATT&CK v20. My original notes estimated "40+" from the Navigator.
-- v20 split Defense Evasion. APT41's largest tactic is now **Stealth** (17), followed by Persistence and Discovery (12 each).
+- Since v19 (April 2026), Defense Evasion is split into Stealth and Defense Impairment. In v20, APT41's largest tactic is **Stealth** (17), followed by Persistence and Discovery (12 each).
 - **8** of the 82 have no SigmaHQ rule tagged with that ID. Some, such as T1098.007 or T1071.002, are covered one level up by parent-technique rules. Others, such as T1480.001 Environmental Keying or T1684.001 Impersonation, have nothing.
 - **Renumbering:** T1684.001 replaced T1656. The tool also counts rules tagged with old IDs, so renumbering doesn't create fake gaps.
 
